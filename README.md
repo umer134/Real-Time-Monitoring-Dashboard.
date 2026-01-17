@@ -61,12 +61,15 @@ npm run dev
 http://localhost:5173
 
 
-**Приминение**
+## Применение
 
-1.Проект демонстрирует подходы, применимые для:
-2.мониторинга сервисов и логов;
-3.real-time dashboard’ов;
-4.внутрених инструментов для отображения метрик и алертов.
+Проект демонстрирует подходы, применимые для:
 
-**Репозиторий**
-https://github.com/umer134/Real-Time-Monitoring-Dashboard
+- Мониторинга сервисов и логов
+- Real-time dashboard’ов
+- Внутренних инструментов для отображения метрик и алертов
+
+## Репозиторий
+
+[GitHub: Real-Time Monitoring Dashboard](https://github.com/umer134/Real-Time-Monitoring-Dashboard)
+
