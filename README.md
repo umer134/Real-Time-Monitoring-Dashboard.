@@ -6,7 +6,9 @@ Real-Time Monitoring Dashboard — это система мониторинга 
 
 Backend генерирует события, хранит ограниченную историю и публикует их клиентам. Frontend отображает поток событий, а также агрегированные статистики в реальном времени. Авторизация и бизнес-логика пользователей сознательно исключены, чтобы сфокусироваться на инфраструктурных задачах: real-time, WebSocket, управление состоянием и производительность.
 
-**Технический стек**
+---
+
+## Технический стек
 
 **Backend:**
 - Node.js
@@ -21,7 +23,9 @@ Backend генерирует события, хранит ограниченну
 - WebSocket client
 - Centralized state management
 
-**Ключевые инженерные решения**
+---
+
+## Ключевые инженерные решения
 
 - EventService реализует publish/subscribe модель для доставки событий.
 - WebSocket используется исключительно как транспорт, без привязки к бизнес-логике.
@@ -29,47 +33,30 @@ Backend генерирует события, хранит ограниченну
 - Четко отделены генерация, хранение и доставка событий.
 - Проект легко расширяется под реальные источники данных (логи, метрики, сервисы).
 
-**Структура проекта**
+---
 
-server/ # Backend
-├─ events/ # Сервис генерации и хранения событий
-├─ websocket/ # WebSocket сервер
-├─ http/ # REST API для истории и health-check
-└─ app.ts # Точка входа
+## Структура проекта
 
-client/ # Frontend
-├─ widgets/ # Компоненты для отображения событий и статистики
-├─ websocket/ # Хук useWebSocket
-├─ store/ # eventStore на Zustand
-└─ app/  # App.tsx Главный компонент
+**server/** – Backend  
+├─ events/ – Сервис генерации и хранения событий  
+├─ websocket/ – WebSocket сервер  
+├─ http/ – REST API для истории и health-check  
+└─ app.ts – Точка входа  
 
-**Запуск проекта**
+**client/** – Frontend  
+├─ widgets/ – Компоненты для отображения событий и статистики  
+├─ websocket/ – Хук useWebSocket  
+├─ store/ – eventStore на Zustand  
+└─ app/ – App.tsx, главный компонент  
+
+---
+
+## Запуск проекта
 
 1. Установить зависимости:
+
 ```bash
 cd server
 npm install
 cd ../client
 npm install
-2. Запустить серевер:
-cd server
-npm run dev
-3. Запустить frontend (React + Vite):
-cd client
-npm run dev
-4. Открыть браузер:
-http://localhost:5173
-
-
-## Применение
-
-Проект демонстрирует подходы, применимые для:
-
-- Мониторинга сервисов и логов
-- Real-time dashboard’ов
-- Внутренних инструментов для отображения метрик и алертов
-
-## Репозиторий
-
-[GitHub: Real-Time Monitoring Dashboard](https://github.com/umer134/Real-Time-Monitoring-Dashboard)
-
