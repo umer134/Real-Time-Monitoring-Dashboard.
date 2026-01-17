@@ -31,3 +31,42 @@ Backend генерирует события, хранит ограниченну
 
 **Структура проекта**
 
+server/ # Backend
+├─ events/ # Сервис генерации и хранения событий
+├─ websocket/ # WebSocket сервер
+├─ http/ # REST API для истории и health-check
+└─ app.ts # Точка входа
+
+client/ # Frontend
+├─ widgets/ # Компоненты для отображения событий и статистики
+├─ websocket/ # Хук useWebSocket
+├─ store/ # eventStore на Zustand
+└─ app/  # App.tsx Главный компонент
+
+**Запуск проекта**
+
+1. Установить зависимости:
+```bash
+cd server
+npm install
+cd ../client
+npm install
+2. Запустить серевер:
+cd server
+npm run dev
+3. Запустить frontend (React + Vite):
+cd client
+npm run dev
+4. Открыть браузер:
+http://localhost:5173
+
+
+**Приминение**
+
+1.Проект демонстрирует подходы, применимые для:
+2.мониторинга сервисов и логов;
+3.real-time dashboard’ов;
+4.внутрених инструментов для отображения метрик и алертов.
+
+**Репозиторий**
+https://github.com/umer134/Real-Time-Monitoring-Dashboard
