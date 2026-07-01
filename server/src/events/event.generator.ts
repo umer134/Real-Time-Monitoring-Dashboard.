@@ -10,8 +10,8 @@ const messages = [
 ];
 
 function randomLevel(): EventLevel {
-    const leveles: EventLevel[] = ["info", "warning", "error"];
-    return leveles[Math.floor(Math.random() * leveles.length)]; 
+    const levels: EventLevel[] = ["info", "warning", "error"];
+    return levels[Math.floor(Math.random() * levels.length)]; 
 }
 
 export function startEventGenerator(service: EventService) {

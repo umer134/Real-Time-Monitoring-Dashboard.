@@ -4,8 +4,11 @@ export const ConnectionStatus = () => {
     const connected = useEventsStore((s) => s.connected);
 
     return (
-        <div>
-            Status: {connected ? "CONNECTED" : "DISCONNECTED"}
+        <div className="connection-status" role="status" aria-live="polite">
+            <span className={`status-indicator ${connected ? "connected" : "disconnected"}`} />
+            <span className="status-text">
+                {connected ? "🟢 Connected" : "🔴 Disconnected"}
+            </span>
         </div>
     );
 };

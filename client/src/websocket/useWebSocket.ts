@@ -4,26 +4,33 @@ import { useEventsStore } from "../store/eventStore";
 import type { SystemEvent } from "../shared/types/event";
 
 export const useWebSocket = () => {
-    console.log('hook called')
-    const addEvent = useEventsStore((s) => s.addEvent);
-    const setConnected = useEventsStore((s) => s.setConnected);
+  const addEvent = useEventsStore((s) => s.addEvent);
+  const setConnected = useEventsStore((s) => s.setConnected);
 
-    useEffect(() => {
-        const socket = createSocket();
+  useEffect(() => {
+    const socket = createSocket();
 
-        socket.onopen = () => {
-            setConnected(true);
-        };
+    socket.onopen = () => {
+        setConnected(true);
+    };
 
-        socket.onclose = () => {
-            setConnected(false);
-        }
+    socket.onclose = () => {
+        setConnected(false);
+    }
 
-        socket.onmessage = (event) => {
-            const data: SystemEvent = JSON.parse(event.data);
-            addEvent(data);
-        };
-        
-        return () => socket.close();
-    }, []);
+    socket.onerror = () => {
+        console.error("WebSocket error occurred");
+    }
+
+    socket.onmessage = (event) => {
+      try {
+        const data: SystemEvent = JSON.parse(event.data);
+        addEvent(data);
+      } catch (e) {
+        console.error("Failed to parse event data:", e);
+      }
+    };
+      
+      return () => socket.close();
+  }, []);
 };

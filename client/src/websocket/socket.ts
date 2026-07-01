@@ -1,3 +1,3 @@
 export const createSocket = () => {
-    return new WebSocket('ws://localhost:4000');
+    return new WebSocket( "wss://real-time-monitoring-dashboard-zpx2.onrender.com");
 };

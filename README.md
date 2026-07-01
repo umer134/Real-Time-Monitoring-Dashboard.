@@ -8,9 +8,18 @@ Backend генерирует события, хранит ограниченну
 
 ---
 
+## Фотографии
+
+### Главный экран
+
+![Main](./photos/image.png)
+
+---
+
 ## Технический стек
 
 **Backend:**
+
 - Node.js
 - Express
 - WebSocket (ws)
@@ -18,6 +27,7 @@ Backend генерирует события, хранит ограниченну
 - In-memory store (лимит истории событий)
 
 **Frontend:**
+
 - React
 - TypeScript
 - WebSocket client
@@ -41,13 +51,13 @@ Backend генерирует события, хранит ограниченну
 ├─ events/ – Сервис генерации и хранения событий  
 ├─ websocket/ – WebSocket сервер  
 ├─ http/ – REST API для истории и health-check  
-└─ app.ts – Точка входа  
+└─ app.ts – Точка входа
 
 **client/** – Frontend  
 ├─ widgets/ – Компоненты для отображения событий и статистики  
 ├─ websocket/ – Хук useWebSocket  
 ├─ store/ – eventStore на Zustand  
-└─ app/ – App.tsx, главный компонент  
+└─ app/ – App.tsx, главный компонент
 
 ---
 
@@ -60,3 +70,4 @@ cd server
 npm install
 cd ../client
 npm install
+```
